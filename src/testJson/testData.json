@@ -1,0 +1,27 @@
+[
+  {
+    "avatar": "ElijasBianka.jpg",
+    "name": "Elijas Bianka",
+    "role": "Frontend Developer"
+  },
+  {
+    "avatar": "AceMiho.jpg",
+    "name": "Ace Miho",
+    "role": "Backend Developer"
+  },
+  {
+    "avatar": "CristenAlex.jpg",
+    "name": "Cristen Alex",
+    "role": "Intern Developer"
+  },
+  {
+    "avatar": "FreduricFreyja.jpg",
+    "name": "Freduric Freyja",
+    "role": "DevOps Developer"
+  },
+  {
+    "avatar": "AonghusAravind.jpg",
+    "name": "Aonghus Aravind",
+    "role": "QA Developer"
+  }
+]

@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import MainGrid from './components/MainGrid'
 import * as serviceWorker from './serviceWorker';
+import { observe } from './components/Move';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const root = document.getElementById('root')
+
+observe((storedPosition) => ReactDOM.render(<MainGrid storedPosition={storedPosition} />, root))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
