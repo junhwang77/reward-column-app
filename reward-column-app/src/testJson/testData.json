@@ -1,0 +1,27 @@
+[
+  {
+    "pic": "auto.jpg",
+    "name": "Mercedes",
+    "cost": "$120,000"
+  },
+  {
+    "pic": "cruise.jpg",
+    "name": "Cruise",
+    "cost": "$1,400"
+  },
+  {
+    "pic": "food.jpg",
+    "name": "Restaurant",
+    "cost": "$500"
+  },
+  {
+    "pic": "mac.jpg",
+    "name": "Apple Products",
+    "cost": "$3,000"
+  },
+  {
+    "pic": "shoes.jpg",
+    "name": "Jordan Shoes",
+    "cost": "$200"
+  }
+]
