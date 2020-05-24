@@ -7,9 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('reward-column-app-api:server');
 var http = require('http');
-var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://dbUser:dbUser@reward-column-app-atf78.mongodb.net/test?retryWrites=true&w=majority');
 /**
  * Get port from environment and store in Express.
  */

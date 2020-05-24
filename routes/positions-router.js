@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
+require('dotenv').config();
 
 const MongoClient = require('mongodb').MongoClient
 
-const connectionString = "mongodb+srv://dbUser:dbUser@reward-column-app-atf78.mongodb.net/test?retryWrites=true&w=majority"
+const connectionString = process.env.DB_LOCAL || process.env.DATABASE_URI
 
 MongoClient.connect(connectionString, {
     useUnifiedTopology: true
