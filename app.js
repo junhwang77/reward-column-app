@@ -12,9 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var positions = require('./routes/positions-router')
-var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/reward-column-app-api');
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }))
