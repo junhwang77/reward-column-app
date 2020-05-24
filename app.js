@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Add routes here***
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/positions", positions);
@@ -51,11 +51,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'reward-column-app/build')))
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/reward-column-app/build/index.html'))
-})
+
 
 module.exports = app;
