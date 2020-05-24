@@ -4,11 +4,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
-Created with [Express](https://expressjs.com/), [React DnD](https://react-dnd.github.io/react-dnd/about), [Sementic UI React](https://react.semantic-ui.com/)
+Created with [Express](https://expressjs.com/), [React DnD](https://react-dnd.github.io/react-dnd/about), [Sementic UI React](https://react.semantic-ui.com/).
 
-Saved data is stored in [Mongo DB Atlas Cloud](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_americas_united%20states_search_brand_atlas_desktop&utm_term=mongo%20db%20atlas&utm_medium=cpc_paid_search&utm_ad=e&gclid=CjwKCAjwtqj2BRBYEiwAqfzur4KwIUl9KY3MumbYimj0pZICiPPjtI6JSVY0LX1cG0DU3nBqwKMdLhoC4bsQAvD_BwE)
+Saved data is stored in [Mongo DB Atlas Cloud](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_americas_united%20states_search_brand_atlas_desktop&utm_term=mongo%20db%20atlas&utm_medium=cpc_paid_search&utm_ad=e&gclid=CjwKCAjwtqj2BRBYEiwAqfzur4KwIUl9KY3MumbYimj0pZICiPPjtI6JSVY0LX1cG0DU3nBqwKMdLhoC4bsQAvD_BwE).
 
-Deployed with Heroku here: [https://reward-column-app.herokuapp.com/](https://reward-column-app.herokuapp.com/)
+Deployed with Heroku here: [https://reward-column-app.herokuapp.com/](https://reward-column-app.herokuapp.com/).
 
 
 
