@@ -27,6 +27,7 @@ export const observe = (o) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
         'Access-Control-Allow-Origin'
         : '*'
       }
@@ -160,12 +161,11 @@ export const saveProgress = () => {
   .then(res => {
     console.log(res)
     res.json().then(res => {
-      console.log(res)
-      let method = res.length?"PATCH":"POST"
       fetch("/positions/1", {
-        method: method,
+        method: res.length?"PATCH":"POST",
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
           'Access-Control-Allow-Origin'
           : '*'
         },

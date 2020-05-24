@@ -15,8 +15,10 @@ MongoClient.connect(connectionString, {
   const positionsCollection = db.collection('positions')
 
   router.get("/:id", function(req, res, next) {
+      console.log(positionsCollection.find({ id:1 }).toArray())
     positionsCollection.find({ id:1 }).toArray()
     .then(result => {
+        console.log(res)
         res.send(result)
     }).catch(error => console.log(error))
   });
