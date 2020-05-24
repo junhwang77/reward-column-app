@@ -2,7 +2,7 @@
 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Created with [Express](https://expressjs.com/), [React DnD](https://react-dnd.github.io/react-dnd/about), [Sementic UI React](https://react.semantic-ui.com/).
 
