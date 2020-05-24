@@ -8,7 +8,7 @@ var logger = require('morgan');
 var cors = require("cors");
 
 //require routes***
-//var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var positions = require('./routes/positions-router')
