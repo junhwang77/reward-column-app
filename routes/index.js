@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
+
 
 // Serve static files from the React frontend app
 router.use(express.static(path.join(__dirname, 'reward-column-app/build')))
