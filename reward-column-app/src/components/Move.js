@@ -158,10 +158,12 @@ export const saveProgress = () => {
     }
   })
   .then(res => {
+    console.log(res)
     res.json().then(res => {
       console.log(res)
+      let method = res.length?"PATCH":"POST"
       fetch("/positions/1", {
-        method: res.length?"PATCH":"POST",
+        method: method,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin'
