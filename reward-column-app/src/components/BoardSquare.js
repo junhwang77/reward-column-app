@@ -5,7 +5,7 @@ import { ItemTypes } from './Constants'
 import { useDrop } from 'react-dnd'
 import Overlay from './Overlay'
 
-const BoardSquare = ({ x, y, children, lastDroppedPosition, onDrop }) => {
+const BoardSquare = ({ x, y, children }) => {
 
   let start = x === 0
 
@@ -15,6 +15,7 @@ const BoardSquare = ({ x, y, children, lastDroppedPosition, onDrop }) => {
     drop: (item) => {
       moveReward(x, y, item.pos)
     },
+    //collector function: transform states stored in the monitor into props that is usable by the components
     collect: monitor => ({
       isOver: !!monitor.isOver(),
       canDrop: !!monitor.canDrop()
@@ -24,6 +25,7 @@ const BoardSquare = ({ x, y, children, lastDroppedPosition, onDrop }) => {
 
   return (
     <div
+      //Referencing the boardsquare with the React Dnd's drop function allows React DnD to access the BoardSquare DOM, and manipulate it.
       ref={drop}
       style={{
         position: 'relative',

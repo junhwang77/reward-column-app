@@ -19,6 +19,7 @@ MongoClient.connect(connectionString, {
     positionsCollection.find({ id:1 }).toArray()
     .then(result => {
         console.log(res)
+        //sends back the results to the frontend
         res.send(result)
     }).catch(error => console.log(error))
   });

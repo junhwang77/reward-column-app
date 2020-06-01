@@ -1,9 +1,5 @@
-/* const observe = (receive) => {
-  const randPos = () => Math.floor(Math.random() * 6)
-  setInterval(()=>receive([randPos(), randPos()]), 500)
-}
-export default observe;
- */
+
+//Constructor variables
 let rewardPosition = [0, 0]
 let observers = []
 let storedPosition = [[0, 0],[0, 1],[0, 2],[0, 3],[0, 4]]
@@ -13,15 +9,20 @@ let history = []
 let redoStorage = []
 let redoHistory = []
 
+//Re-renders the table 
 const emitChange = () => {
   //console.log([...history])
   //console.log([...redoHistory])
   //console.log('storedposition',[...storedPosition])
   //console.log('deletedstorage',[...deletedStorage])
+
+
+  //checks if a render exists in the observers, and if so, it updates it with latest storedPosition.
   observers.forEach((o) => o && o(storedPosition))
 }
 
 export const observe = (o) => {
+  //GET our initial stored positions from Mongo DB
   if( storedPosition.length === 5){
     fetch("/positions/1", {
       method: 'GET',
@@ -45,6 +46,7 @@ export const observe = (o) => {
   observers.push(o)
   emitChange()
   return () => {
+    //filters out the older o (previous render), and returns render with the new position
     observers = observers.filter((t) => t !== o)
   }
 }
@@ -105,10 +107,13 @@ export const redo = () => {
 }
 
 export const moveReward = (toX, toY, lastDroppedPosition) => {
-  //If the reward is not from the starting zone,
+  redoHistory = []
   let transferred
+  //(lastDroppedPosition is the item's most recent position)
+  //If the reward is not from its current position or the starting zone...
   if((lastDroppedPosition[0] !== toX && lastDroppedPosition[1] !== toY) || (lastDroppedPosition[0] !== 0) ){
     //Iterate through the positions, and if the position is where the reward originated from, delete that reward.
+    //(When reward is moved from position other than the starting zone, it 'moves it rather than copying it)
     for(let i = 0;i < storedPosition.length; i++) {
       if(storedPosition[i][0] === lastDroppedPosition[0] && storedPosition[i][1] === lastDroppedPosition[1]) {
         let [removed] = storedPosition.splice(i,1)
@@ -140,6 +145,9 @@ export const canMoveReward = (toX, toY, row) => {
   const dy = Math.abs(toY - y)
   const dx = Math.abs(toX)
   return (
+    //You cannot move in y direction (dy === 0)
+    //Or to the starting square (dx !== 0)
+    //Or any square already occupied (stored)
     (dy === 0 && dx !== x) && !stored
   )
 }
@@ -159,7 +167,6 @@ export const saveProgress = () => {
     }
   })
   .then(res => {
-    console.log(res)
     res.json().then(res => {
       fetch("/positions/1", {
         method: res.length?"PATCH":"POST",

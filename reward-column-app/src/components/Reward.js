@@ -11,13 +11,16 @@ const Reward = ({x, y, deleteReward}) => {
             type: ItemTypes["Reward"+(y+1)],
             pos: [x,y]
           },
+    //Collector function converts the Dnd states in the monitor into props, which the React components can use.
     collect: monitor => ({
       isDragging: !!monitor.isDragging()
     })
   })
 
+
   return (
     <div
+      //Referencing the Reward Component DOM with the drag function attaches the DOM elements to the React Dnd (in this case, allowing React DnD to directly affect the DOM when we drag the object)
       ref={drag}
       style={{
         opacity: isDragging ? 0.5 : 1,

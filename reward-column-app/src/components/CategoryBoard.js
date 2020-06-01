@@ -1,21 +1,18 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import Reward from './Reward'
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 import BoardSquare from './BoardSquare'
 import { deleteReward } from './Move'
 
-
-
 const RenderSquare = (i, position, x ,y) => {
-  const [lastDroppedPosition, setLastDroppedPosition] = useState(null)
-  const handleDrop = useCallback((pos) => setLastDroppedPosition(pos), [])
+
+  //const [lastDroppedPosition, setLastDroppedPosition] = useState(null)
+  //const handleDrop = useCallback((pos) => setLastDroppedPosition(pos), [])
 
   return (
     <div key={i} style={{ width: '16.6%', height: '20%', borderLeft: 'lightgrey 2px dashed', borderBottom: 'lightgrey 2px solid' }}>
-      <BoardSquare x={x} y={y} 
-        lastDroppedPosition={lastDroppedPosition}
-        onDrop={handleDrop}>
+      <BoardSquare x={x} y={y}>
         {renderReward(x, y, position)}
       </BoardSquare>
     </div>
@@ -23,9 +20,9 @@ const RenderSquare = (i, position, x ,y) => {
 }
 
 const renderReward = (x, y, position) => {
-    if( (position[0] === x && position[1] === y) )  {
-      return <Reward x={x} y={y} deleteReward={deleteReward} />
-    }
+  if( (position[0] === x && position[1] === y) )  {
+    return <Reward x={x} y={y} deleteReward={deleteReward} />
+  }
 }
 
 const CategoryBoard = ({ storedPosition }) => {
@@ -44,6 +41,7 @@ const CategoryBoard = ({ storedPosition }) => {
       weekdays.push(RenderSquare(i, position, x, y))
   } 
   return (
+    //DndProvider component and the HTML5-backend exposes data from the DOM events that are activated - It translates DOM events into internal Redux actions that React DnD can process.
     <DndProvider backend={Backend}>
       <div
         style={{
