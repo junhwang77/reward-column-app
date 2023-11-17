@@ -37,7 +37,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:9000",
+  "proxy": "https://reward-column-app-api.onrender.com/",
   "main": "index.js",
   "license": "MIT"
 }
